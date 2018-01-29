@@ -38,7 +38,12 @@ class AdminpanelController {
                 def file = request.getFile('file')
 
                 if(file.empty) {
-                    flash.message = "File cannot be empty"
+                    def documentInstance
+                    if (noticeInstance.doc) {
+                    documentInstance = Document.get(noticeInstance.doc.id)
+                    new File(grailsApplication.config.uploadFolder + "/" + noticeInstance.doc.filename).delete()
+                    }
+                    noticeInstance.doc = null
                 } else {
                     def documentInstance = new Document()
                     documentInstance.filename = file.originalFilename
@@ -53,7 +58,28 @@ class AdminpanelController {
                     documentInstance.save(flush:true)
                     noticeInstance.doc = documentInstance
                 }
-                document.delete(flush:true)
+
+
+            }
+            else {
+                def file = request.getFile('file')
+
+                if(file.empty) {
+                    flash.message = "File cannot be empty"
+                } else {
+                    def documentInstance = new Document()
+                    documentInstance.filename = file.originalFilename
+                    documentInstance.fullPath = grailsApplication.config.uploadFolder + "/" + documentInstance.filename
+                    file.transferTo(new File(documentInstance.fullPath))
+                    if ((file.contentType == "image/jpeg") || (file.contentType == "image/jpg") || (file.contentType == "image/png")) {
+                        documentInstance.fileType = 1
+                    }
+                    else if ((file.contentType == "application/pdf")) {
+                        documentInstance.fileType = 2
+                    }
+                    documentInstance.save(flush:true)
+                    noticeInstance.doc = documentInstance
+                }
             }
             noticeInstance.save(flush:true)
         }
@@ -257,51 +283,57 @@ class AdminpanelController {
     def updatealert(long id) {
         check()
         def alertInstance = Alert.get(id)
-        if (alertInstance) {
+       if (alertInstance) {
             alertInstance.title = params.title
             alertInstance.content = params.content
-            def file = request.getFile('file')
-            if(file){
-                if (alertInstance.doc) {
-                    def document = alertInstance.doc
-                    if(file.empty) {
-                        flash.message = "File cannot be empty"
-                    } else {
-                        def documentInstance = new Document()
-                        documentInstance.filename = file.originalFilename
-                        documentInstance.fullPath = grailsApplication.config.uploadFolder + documentInstance.filename
-                        file.transferTo(new File(documentInstance.fullPath))
-                        if ((file.contentType == "image/jpeg") || (file.contentType == "image/jpg") || (file.contentType == "image/png") || (file.contentType == "image/gif")) {
-                            documentInstance.fileType = 1
-                        }
-                        else if ((file.contentType == "application/pdf")) {
-                            documentInstance.fileType = 2
-                        }
-                        documentInstance.save(flush:true)
-                        alertInstance.doc = documentInstance
+            if (alertInstance.doc) {
+                def document = alertInstance.doc
+                def file = request.getFile('file')
+
+                if(file.empty) {
+                    def documentInstance
+                    if (alertInstance.doc) {
+                    documentInstance = Document.get(alertInstance.doc.id)
+                    new File(grailsApplication.config.uploadFolder + "/" + alertInstance.doc.filename).delete()
                     }
-                    document.delete(flush:true)
+                    alertInstance.doc = null
+                } else {
+                    def documentInstance = new Document()
+                    documentInstance.filename = file.originalFilename
+                    documentInstance.fullPath = grailsApplication.config.uploadFolder + documentInstance.filename
+                    file.transferTo(new File(documentInstance.fullPath))
+                    if ((file.contentType == "image/jpeg") || (file.contentType == "image/jpg") || (file.contentType == "image/png")) {
+                        documentInstance.fileType = 1
+                    }
+                    else if ((file.contentType == "application/pdf")) {
+                        documentInstance.fileType = 2
+                    }
+                    documentInstance.save(flush:true)
+                    alertInstance.doc = documentInstance
                 }
-                else {
-                    if(file.empty) {
-                        flash.message = "File cannot be empty"
-                    } else {
-                        def documentInstance = new Document()
-                        documentInstance.filename = file.originalFilename
-                        documentInstance.fullPath = grailsApplication.config.uploadFolder + documentInstance.filename
-                        file.transferTo(new File(documentInstance.fullPath))
-                        if ((file.contentType == "image/jpeg") || (file.contentType == "image/jpg") || (file.contentType == "image/png") || (file.contentType == "image/gif")) {
-                            documentInstance.fileType = 1
-                        }
-                        else if ((file.contentType == "application/pdf")) {
-                            documentInstance.fileType = 2
-                        }
-                        documentInstance.save(flush:true)
-                        alertInstance.doc = documentInstance
+
+
+            }
+            else {
+                def file = request.getFile('file')
+
+                if(file.empty) {
+                    flash.message = "File cannot be empty"
+                } else {
+                    def documentInstance = new Document()
+                    documentInstance.filename = file.originalFilename
+                    documentInstance.fullPath = grailsApplication.config.uploadFolder + "/" + documentInstance.filename
+                    file.transferTo(new File(documentInstance.fullPath))
+                    if ((file.contentType == "image/jpeg") || (file.contentType == "image/jpg") || (file.contentType == "image/png")) {
+                        documentInstance.fileType = 1
                     }
+                    else if ((file.contentType == "application/pdf")) {
+                        documentInstance.fileType = 2
+                    }
+                    documentInstance.save(flush:true)
+                    alertInstance.doc = documentInstance
                 }
             }
-
             alertInstance.save(flush:true)
         }
         redirect(action: 'index')
@@ -341,6 +373,50 @@ class AdminpanelController {
             documentInstance = null
         }
         [notice: noticeInstance, document: documentInstance]
+    }
+
+    def download(int id) {
+        check()
+        def fileInstance = Document.findById(id)
+
+        response.setContentType("APPLICATION/OCTET-STREAM")
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"${fileInstance.filename}\"")
+        def file1 = new File(fileInstance.fullPath)
+        def fileInputStream = new FileInputStream(file1)
+        def outputStream = response.getOutputStream()
+        byte[] buffer = new byte[4096]
+        int len
+        while ((len = fileInputStream.read(buffer)) > 0) {
+            outputStream.write(buffer, 0, len)
+        }
+        outputStream.flush()
+        outputStream.close()
+        fileInputStream.close()
+
+    }
+
+    def about() {
+        check()
+    }
+
+    def facultyofarts() {
+        check()
+    }
+
+    def facultyofcommerce() {
+        check()
+    }
+
+    def facultyofit() {
+        check()
+    }
+
+    def facultyofmanagement() {
+        check()
+    }
+
+    def facultyofscience() {
+        check()
     }
 
 }

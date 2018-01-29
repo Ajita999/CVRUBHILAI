@@ -60,4 +60,28 @@ class DashboardController {
         def albumInstance = Album.get(id)
         [album: albumInstance]
     }
+
+    def about() {
+
+    }
+
+    def facultyofarts() {
+
+    }
+
+    def facultyofcommerce() {
+
+    }
+
+    def facultyofit() {
+
+    }
+
+    def facultyofmanagement() {
+
+    }
+
+    def facultyofscience() {
+
+    }
 }

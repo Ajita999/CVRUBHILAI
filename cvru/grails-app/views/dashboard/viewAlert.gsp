@@ -39,14 +39,13 @@
 <section class="tophead" role="tophead">
     <!-- Navigation Section -->
     <header id="header">
-        <div class="header-content clearfix"> <a class="logo" href="#">Auro</a>
+        <div class="header-content clearfix"> <a class="logo" href="#">AISECT</a>
             <nav class="navigation" role="navigation">
                 <ul class="primary-nav">
-                    <li><a href="./l#header-slider">Home</a></li>
-                    <li><a href="./#services">Our Services</a></li>
-                    <li><a href="./#portfolio">Our Portfolio</a></li>
-                    <li><a href="./#testimonials">Testimonials</a></li>
-                    <li><a href="./#contact">Contact</a></li>
+                    <li><a href="../index/#header-slider">Home</a></li>
+                    <li><a href="../index/#services">Our Services</a></li>
+                    <li><a href="../index/#testimonials">Testimonials</a></li>
+                    <li><a href="../index/#contact">Contact</a></li>
                 </ul>
             </nav>
             <a href="#" class="nav-toggle">Menu<span></span></a> </div>
@@ -58,10 +57,11 @@
 
 <!-------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------->
-<div class="container">
+<div class="container " style="padding-top: 80px; padding-left: 7%;">
     <div class="row">
+
         <h2>${alert.title}</h2>
-        <h4>
+        <p>
             <br>
             ${alert.content}
             <br>
@@ -74,10 +74,11 @@
                 </g:else>
             </g:if>
 
-        </h4>
+        </p>
+        </div>
     </div>
 </div>
-<a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default">Back</div> </a>
+<a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default" style="margin-left:47.5%; margin-bottom: 45px;">Back</div> </a>
 
 
 

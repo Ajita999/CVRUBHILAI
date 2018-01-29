@@ -74,13 +74,13 @@ Author URL: http://www.sevenar.in
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active"> <asset:image src="slider/slider1.png"/>
+            <div class="item active"> <asset:image src="IMG_20160824_113910_AO_HDR.jpg"/>
                 <div class="carousel-caption">
                     <h3>Aisect Bhilai</h3>
                     <p>Some dummy text about the institution</p>
                 </div>
             </div>
-            <div class="item"> <asset:image src="slider/slider1.png"/>
+            <div class="item"> <asset:image src="IMG_20160824_113910_AO_HDR.jpg"/>
                 <div class="carousel-caption">
                     <h3>Something Different</h3>
                     <p>Some dummy text about the institution</p>
@@ -92,64 +92,48 @@ Author URL: http://www.sevenar.in
 </section>
 <!-- Slider Section -->
 <!-- Service Section -->
+<!-- Service Section -->
 <section id="services" class="section services">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="services-contentCourses">
-                    <h4>Lorem Ipsum</h4>
-                    <p style="text-align: justify">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                    <h4>About Us</h4>
+                    <p style="text-align: justify">Dr. C.V. Raman University was establishedon 3 November 2006, in the district of  Bilaspur, Chhattisgarh by the "All India Society for Electronics and Computer Technology" (AISECT) Sponsoring body. The University was named after the first Nobel Laureate of our co
+                    <g:link controller="dashboard" action="about">Read More</g:link>
                 </div>
             </div>
-            <div class="col-md-3 hidden-sm hidden-xs">
-                <div class="services-contentCourses">
-                    <h5>Courses</h5>
-                    <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Mobile Application</a></li>
-                        <li><a href="#">Product Development</a></li>
-                        <li><a href="#">Packaging</a></li>
-                        <li><a href="#">Retail Management</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 hidden-sm hidden-xs">
-                <div class="services-contentCourses">
-                    <h5>Fees</h5>
-                    <ul>
-                        <li><a href="#">Marketing Research</a></li>
-                        <li><a href="#">Social Marketing</a></li>
-                        <li><a href="#">Mobile marketing</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-6 hidden-lg hidden-md">
+            <div class="col-md-4 hidden-sm hidden-xs">
                 <div class="services-contentCourses">
                     <h5>Courses & Fees</h5>
                     <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Mobile Application</a></li>
-                        <li><a href="#">Product Development</a></li>
-                        <li><a href="#">Packaging</a></li>
-                        <li><a href="#">Retail Management</a></li>
+                        <li><g:link controller="dashboard" action="facultyofit">Faculty of Information Technology</g:link></li><br>
+                        <li><g:link controller="dashboard" action="facultyofmanagement">Faculty of Management</g:link></li><br>
+                        <li><g:link controller="dashboard" action="facultyofcommerce">Faculty of Commerce</g:link></li><br>
+                        <li><g:link controller="dashboard" action="facultyofarts">Faculty of Arts</g:link></li><br>
+                        <li><g:link controller="dashboard" action="facultyofscience">Faculty of Science</g:link></li><br>
+
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="services-contentCourses">
-                    <h5>Placements</h5>
-                    <ul>
-                        <li><a href="#">Marketing Research</a></li>
-                        <li><a href="#">Social Marketing</a></li>
-                        <li><a href="#">Mobile marketing</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!--
+      <div class="col-md-4 col-sm-12">
+        <div class="services-contentCourses">
+          <h5>Placements</h5>
+          <ul>
+            <li><a href="#">Marketing Research</a></li>
+            <li><a href="#">Social Marketing</a></li>
+            <li><a href="#">Mobile marketing</a></li>
+          </ul>
+        </div>
+      </div>
+      -->
         </div>
     </div>
 </section>
+
 <div class="Marquee">
-    <div class="Marquee-content"><!-- this is the marquee add a feature so that admin could add impotant notices directly-->
+    <div class="Marquee-content"><!-- this is the marquee add a feature so that admin could add important notices directly-->
         <g:each in="${alert}">
             <g:link action="viewAlert" id="${it.id}"><div class="Marquee-tag"><p class="marqueeP">${it.title}</p></div></g:link>
         </g:each>
@@ -166,10 +150,10 @@ Author URL: http://www.sevenar.in
         <div class="portfolioFilter">
             <ul class="Portfolio-nav wow fadeIn delay-02s">
                 <li><a href="#" data-filter="*" class="current" >All</a></li>
-                <li><a href="#" data-filter=".category1" >Branding</a></li>
-                <li><a href="#" data-filter=".category2" >Web design</a></li>
-                <li><a href="#" data-filter=".category3" >Print design</a></li>
-                <li><a href="#" data-filter=".category4" >Photography</a></li>
+                %{--<li><a href="#" data-filter=".category1" >Branding</a></li>--}%
+                %{--<li><a href="#" data-filter=".category2" >Web design</a></li>--}%
+                %{--<li><a href="#" data-filter=".category3" >Print design</a></li>--}%
+                %{--<li><a href="#" data-filter=".category4" >Photography</a></li>--}%
             </ul>
         </div>
 
@@ -200,10 +184,12 @@ Author URL: http://www.sevenar.in
                             <th>Date</th>
                         </tr>
                         <g:each in="${notice}">
-                            <tr>
+                            <tr onclick='document.location = "<g:createLink controller='dashboard' action='viewNotice' id='${it.id}' />"'
+                            style="cursor: pointer">
                                 <td>${it.id}</td>
-                                <td><g:link controller="dashboard" action="viewNotice" id="${it.id}">${it.title}</g:link></td>
+                                <td>${it.title}</td>
                                 <td>${it.date}</td>
+
                             </tr>
                         </g:each>
                     </table>
@@ -279,7 +265,7 @@ Author URL: http://www.sevenar.in
         </div>
         <div class="col-md-6 right">
             <p>© 2017 All rights reserved.<br>
-                Made by <a href="http://www.sevenar.in/">SevenarLOGO</a></p>
+                Made by <a href="http://www.sevenar.in/"><img src="http://www.sevenar.in/img/7r.png" width="20 px;"> </a></p>
         </div>
     </div>
 </footer>

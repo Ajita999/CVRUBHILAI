@@ -39,14 +39,13 @@
 <section class="tophead" role="tophead">
     <!-- Navigation Section -->
     <header id="header">
-        <div class="header-content clearfix"> <a class="logo" href="#">Auro</a>
+        <div class="header-content clearfix"> <a class="logo" href="#">Aisect</a>
             <nav class="navigation" role="navigation">
                 <ul class="primary-nav">
-                    <li><a href="./l#header-slider">Home</a></li>
-                    <li><a href="./#services">Our Services</a></li>
-                    <li><a href="./#portfolio">Our Portfolio</a></li>
-                    <li><a href="./#testimonials">Testimonials</a></li>
-                    <li><a href="./#contact">Contact</a></li>
+                    <li><a href="../index/#header-slider">Home</a></li>
+                    <li><a href="../index/#services">Our Services</a></li>
+                    <li><a href="../index/#testimonials">Testimonials</a></li>
+                    <li><a href="../index/#contact">Contact</a></li>
                     <li><g:link controller="autherisation" action="logout">Logout</g:link></li>
                 </ul>
             </nav>
@@ -59,7 +58,7 @@
 
 <!-------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------->
-<div class="container">
+<div class="container" style="padding-top: 80px; padding-left: 7%;">
     <div class="row">
         <h2>Add Alert</h2>
         <g:uploadForm action="saveAlert" method="post">
@@ -76,7 +75,7 @@
                 <input type="file" name="file"/>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn-primary btn" value="Save Alert"/><a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default">Back</div> </a>
+                <input type="submit" class="btn-primary btn" value="Save Alert"/><a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default" style="margin-left: 20px;">Back</div> </a>
             </div>
         </g:uploadForm>
     </div>

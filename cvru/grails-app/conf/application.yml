@@ -108,17 +108,17 @@ dataSource:
 
 environments:
     development:
-        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads
+        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads/
         dataSource:
             dbCreate: create-drop
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
-        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads
+        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads/
         dataSource:
             dbCreate: update
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
-        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads
+        uploadFolder: /home/ajita/Documents/grails/cvru/grails-app/assets/images/uploads/
         dataSource:
             dbCreate: none
             url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE

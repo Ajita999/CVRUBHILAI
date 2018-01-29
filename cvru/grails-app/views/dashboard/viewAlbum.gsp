@@ -61,7 +61,7 @@
         width:100%;
         height:auto;
         margin: 4% auto;
-        box-shadow:-3px 5px 15px #000;
+
         cursor: pointer;
     }
     .modal-img{
@@ -82,14 +82,13 @@
 <section class="tophead" role="tophead">
     <!-- Navigation Section -->
     <header id="header">
-        <div class="header-content clearfix"> <a class="logo" href="#">Auro</a>
+        <div class="header-content clearfix"> <a class="logo" href="#">AISECT</a>
             <nav class="navigation" role="navigation">
                 <ul class="primary-nav">
-                    <li><a href="./l#header-slider">Home</a></li>
-                    <li><a href="./#services">Our Services</a></li>
-                    <li><a href="./#portfolio">Our Portfolio</a></li>
-                    <li><a href="./#testimonials">Testimonials</a></li>
-                    <li><a href="./#contact">Contact</a></li>
+                    <li><a href="../index/#header-slider">Home</a></li>
+                    <li><a href="../index/#services">Our Services</a></li>
+                    <li><a href="../index/#testimonials">Testimonials</a></li>
+                    <li><a href="../index/#contact">Contact</a></li>
                 </ul>
             </nav>
             <a href="#" class="nav-toggle">Menu<span></span></a> </div>
@@ -98,10 +97,9 @@
 </section>
 <!-- Header Section -->
 
-
 <!-------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------->
-<div id="main-content">
+<div id="main-content" style="padding-top: 80px; padding-left: 7%;">
     <h2>${album.albumName}</h2><hr>
 <div id="gallery" class="container">
 
@@ -125,14 +123,7 @@
 <br/>
 </div>
 
-<a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default">Back</div> </a>
-
-
-
-
-
-
-
+<a href="#" onclick="javascript:window.history.back();"><div class="btn btn-default" style="margin-left:47.5%; margin-bottom: 45px;">Back</div> </a>
 
 <!-- Testimonials section -->
 <section id="testimonials" class="section testimonials no-padding">

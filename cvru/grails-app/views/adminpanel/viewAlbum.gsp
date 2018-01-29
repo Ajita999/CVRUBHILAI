@@ -85,11 +85,10 @@
         <div class="header-content clearfix"> <a class="logo" href="#">Auro</a>
             <nav class="navigation" role="navigation">
                 <ul class="primary-nav">
-                    <li><a href="./l#header-slider">Home</a></li>
-                    <li><a href="./#services">Our Services</a></li>
-                    <li><a href="./#portfolio">Our Portfolio</a></li>
-                    <li><a href="./#testimonials">Testimonials</a></li>
-                    <li><a href="./#contact">Contact</a></li>
+                    <li><a href="../index/#header-slider">Home</a></li>
+                    <li><a href="../index/#services">Our Services</a></li>
+                    <li><a href="../index/#testimonials">Testimonials</a></li>
+                    <li><a href="../index/#contact">Contact</a></li>
                     <li><g:link controller="autherisation" action="logout">Logout</g:link></li>
                 </ul>
             </nav>
